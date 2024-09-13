@@ -17,9 +17,9 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     return "Hello, World!"
-@app.route('/pages/<int:num>', methods=['GET'])
+@app.route('/pages/<int:num>/<int:ppn>', methods=['GET'])
 def get_data(num):
-    pages = split_into_pages(data['data'], 20)
+    pages = split_into_pages(data['data'], ppn)
     return jsonify(pages[num-1])
 @app.route('/search/<string:keyword>', methods=['GET'])
 def get_dt(keyword):

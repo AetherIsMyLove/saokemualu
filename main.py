@@ -14,7 +14,9 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 
-# Điểm cuối để lấy danh sách người dùng
+@app.route('/')
+def hello():
+    return "Hello, World!"
 @app.route('/pages/<int:num>', methods=['GET'])
 def get_data(num):
     pages = split_into_pages(data['data'], 20)
@@ -30,4 +32,5 @@ def sortbyMoney(num_pages):
     return jsonify(pages[num_pages -1])
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)
+    

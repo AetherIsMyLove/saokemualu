@@ -42,4 +42,4 @@ def sortbyMoney(num_pages):
     return jsonify(pages[num_pages -1])
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run('0.0.0.0')
